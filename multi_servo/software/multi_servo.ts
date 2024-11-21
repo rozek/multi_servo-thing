@@ -1,6 +1,6 @@
 import Thing from "../../../src/lib/thing"
 
-export default class multi_io extends Thing {
+export default class multi_servo extends Thing {
   async setRGB (R:number, G:number, B:number):Promise<void> {
     const LED_R = Math.floor(65535 * Math.max(0,Math.min(R,1)))
     const LED_G = Math.floor(65535 * Math.max(0,Math.min(G,1)))
@@ -53,6 +53,6 @@ export default class multi_io extends Thing {
     return:'0 to 1'
   },{
     name: 'setServo',
-    args: [ 'port: 0 to 7', 'angle: 0 to 255' ]
+    args: [ 'port: 0 to 7', 'angle: 0 to 180 (technically up to 255)' ]
   }]
 }
