@@ -13,6 +13,30 @@ a simple thing for the "Modular Things" project that controls up to 8 RC servos,
 
 
 
+## Installation and Usage ##
+
+Below are instructions for installation and use of the "multi_servo" thing - skip whatever does not seem applicable:
+
+#### Firmware Preparation ####
+
+1. Install Arduino IDE (see https://www.arduino.cc/en/software)
+2. Install the board "**Raspberry Pi Pico/RP2040/RP2350** by Earle F. Philhower, III" using the Arduino "Boards Manager"
+3. Install "**osap** by Jake Robert Read" using the Arduino "Library Manager"
+
+#### Firmware Installation ####
+
+1. Create a new sketch and rename it to `multi_servo`
+2. Copy the firmware shown below into the sketch editor using the clipboard
+3. Connect the RP2040 board via USB and select it from the board dropdown in the Arduino IDE
+4. Compile and upload the sketch
+
+#### Software Preparation ####
+
+1. Install Node.js (see https://nodejs.org/en/)
+2. Download "modular-things" as a [ZIP archive](https://github.com/modular-things/modular-things/archive/refs/heads/main.zip), unpack it, and move it to a location of your choice
+3. Open a terminal window and navigate to the extracted directory
+4. run `npm install`
+
 #### Software Installation ####
 
 1. Open the terminal window and navigate to the extracted directory
