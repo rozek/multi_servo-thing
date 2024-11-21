@@ -19,7 +19,7 @@ export default class multi_servo extends Thing {
   async getAnalog (Port:number):Promise<number> {
     Port = Math.floor(Port)
     if ((Port < 0) || (Port > 3)) throw new Error(
-      'multi-io thing: invalid analog input port ' + Port
+      'multi-servo thing: invalid analog input port ' + Port
     )
 
     const Data = await this.send('getAnalog',new Uint8Array([Port]))
