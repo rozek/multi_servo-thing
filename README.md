@@ -10,7 +10,9 @@ a simple thing for the "Modular Things" project that controls up to 8 RC servos,
 
 ![Schematic](./multi_servo/circuit/images/schematic.png)
 
-In many cases, the servo output pins may be directly connected to a servo - but it is generally safer to put a level shifter in between a servo and the RP2040.
+When powered with 5V, servos may often be directly connected to the RP2040. However, if you plan to use higher voltages (e.g., 6V), you should insert a level shifter between RP2040 and servo.
+
+> Servos should usually be powered by a separate power supply. If you still choose to power them via USB, you should stabilize the power supply of the servos with about 100µF per servo.
 
 ## Installation and Usage ##
 
