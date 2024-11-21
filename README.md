@@ -114,7 +114,7 @@ loop(async () => {
 
 ## Firmware ##
 
-In the "Modular Things" terminology, the "firmware" of a thing is an Arduino sketch which implements a thing's functionality on the hardware side. Here is the one for the "multi_io" thing:
+In the "Modular Things" terminology, the "firmware" of a thing is an Arduino sketch which implements a thing's functionality on the hardware side. Here is the one for the "multi_servo" thing:
 
 ```c++
 #include <osap.h>
@@ -203,12 +203,12 @@ In the "Modular Things" terminology, the "firmware" of a thing is an Arduino ske
 
 ## Software ##
 
-In the "Modular Things" terminology, the "software" of a thing is its JavaScript interface (which may still include some additional functionality on the software side). Here is the one for the "multi_io" thing:
+In the "Modular Things" terminology, the "software" of a thing is its JavaScript interface (which may still include some additional functionality on the software side). Here is the one for the "multi_servo" thing:
 
 ```typescript
 import Thing from "../../../src/lib/thing"
 
-export default class multi_io extends Thing {
+export default class multi_servo extends Thing {
   async setRGB (R:number, G:number, B:number):Promise<void> {
     const LED_R = Math.floor(65535 * Math.max(0,Math.min(R,1)))
     const LED_G = Math.floor(65535 * Math.max(0,Math.min(G,1)))
