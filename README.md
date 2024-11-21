@@ -1,6 +1,6 @@
 # multi_servo-thing #
 
-a simple thing for the "[Modular-Things](https://github.com/modular-things/modular-things)" project that controls up to 8 RC servos, reads from up to 4 analog inputs and controls the built-in RGB LED
+a simple thing for the "[Modular-Things](https://github.com/modular-things/modular-things)" project that allows you to control up to 8 RC servos, 4 analog inputs and the built-in RGB LED
 
 ![Multi-Servo Thing](Multi-Servo.jpg)
 
