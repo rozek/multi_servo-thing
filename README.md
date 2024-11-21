@@ -13,6 +13,80 @@ a simple thing for the "Modular Things" project that controls up to 8 RC servos,
 
 
 
+#### Software Installation ####
+
+1. Open the terminal window and navigate to the extracted directory
+2. copy the "multi_servo" directory from this repository and its contents into the `./things` folder. In the end, `./things/multi_servo` should have the following structure:
+```
+./things/multi_servo/
+  circuit/
+    images/
+      layout.png
+      schematic.png
+      preview.png
+  firmware/
+    multi_servo/
+      multi_servo.ino
+  software/
+    multi_servo.ts
+```
+3. Insert the following text into file `./things/_things.json` after the first line (i.e., after the opening bracket):
+```json
+  {
+    "author":  "Andreas Rozek",
+    "name":    "multi_servo",
+    "software":"software/multi_servo.ts",
+    "firmware":"firmware/multi_servo/multi_servo.ino",
+    "images": [
+      { 
+        "name": "layout", 
+        "src": "circuit/images/layout.png"
+      },
+      { 
+        "name": "schematic", 
+        "src": "circuit/images/schematic.png"
+      },
+      { 
+        "name": "preview", 
+        "src": "circuit/images/preview.png"
+      }
+    ]
+  },
+```
+4. Insert the following lines into file `./index.ts`
+  * `import multi_servo from "./multi_servo/software/multi_servo";`<br>
+    e.g., as the last import statement
+  * `multi_servo,`<br>
+    e.g., as the last line in the `export default {` block
+5. (Re)start the server<br>
+    `npm run dev`
+
+#### Thing Usage ####
+
+1. Connect the properly prepared RP2040 board to your computer via USB.
+2. Open the (**custom**) web environment: [http://localhost:3000](http://localhost:3000)
+3. Click on "pair new thing" and select the "thing" you connected before<br>(the "List of Things" should now display a description of its interface).
+4. Click on "rename" and change the name of your thing to "MultiServo" (this is the name used within the application example).
+5. Copy the following example application into the web editor:<br>
+```javascript
+const BlinkDelay  = 800 // LED toggles every BlinkDelay milliseconds
+
+let Timestamp = Date.now(), Value = 0
+loop(async () => {
+  let now = Date.now()
+  if (Timestamp + BlinkDelay < now) {
+    Value = (Value === 0 ? 0.1 : 0)
+    await MultiServo.setRGB(0,0,Value)
+
+    Timestamp = now
+  }
+
+  let AnalogIn = await MultiServo.getAnalog(1)
+  MultiServo.setServo(0,AnalogIn*180)
+}, 10)
+```
+6. Click on "run (shift + enter)"<br>(the LED on the RP2040 board should blink now).
+
 ## Firmware ##
 
 In the "Modular Things" terminology, the "firmware" of a thing is an Arduino sketch which implements a thing's functionality on the hardware side. Here is the one for the "multi_io" thing:
