@@ -8,7 +8,7 @@ a simple thing for the "Modular Things" project that controls up to 8 RC servos,
 
 ## Wiring ##
 
-![Schematic](./multi_io/circuit/images/schematic.png)
+![Schematic](./multi_servo/circuit/images/schematic.png)
 
 In many cases, the servo output pins may be directly connected to a servo - but it is generally safer to put a level shifter in between a servo and the RP2040.
 
