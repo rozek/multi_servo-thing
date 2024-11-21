@@ -8,10 +8,9 @@ a simple thing for the "Modular Things" project that controls up to 8 RC servos,
 
 ## Wiring ##
 
-(t.b.w)
+![Schematic](./multi_servo/circuit/images/schematic.png)
 
-
-
+In many cases, the servo output pins may be directly connected to a servo - but it is generally safer to put a level shifter in between a servo and the RP2040.
 
 ## Installation and Usage ##
 
@@ -290,6 +289,8 @@ loop(async () => {
   MultiServo.setServo(0,AnalogIn*180)
 }, 10)
 ```
+
+![Multi-Servo Tester](Multi-Servo-Test.png)
 
 This application lets the built-in LED blink blue, and the potentometer will control the position of the attached servo.
 
