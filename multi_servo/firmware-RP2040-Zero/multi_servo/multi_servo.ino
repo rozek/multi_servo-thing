@@ -11,7 +11,7 @@
   OSAP_Gateway_USBSerial serLink(&Serial);
   OSAP_Port_DeviceNames namePort("multi_servo");
 
-/**** RGB Control  ****/
+/**** RGB Control ****/
 
   Adafruit_NeoPixel builtin_LED(1, builtin_LED_Pin, NEO_GRB + NEO_KHZ800);
 
