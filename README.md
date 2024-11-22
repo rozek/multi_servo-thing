@@ -41,7 +41,7 @@ Below are instructions for installation and use of the "multi_servo" thing - ski
 #### Software Installation ####
 
 1. Open the terminal window and navigate to the extracted directory
-2. copy the "multi_servo" directory from this repository and its contents into the `./things` folder. Delete the `firmware` folder for the wrong board and remove the board suffix from the name of the other (**you will not damage anything if you use the wrong firmware but the "thing" will simply not work**). In the end, `./things/multi_servo` should have the following structure:
+2. copy the "multi_servo" directory from this repository and its contents into the `./things` folder. Delete the `firmware` folder for the wrong board and remove the board suffix from the name of the other (**you will not damage anything if you use the wrong firmware but the built-in LED will not work**). In the end, `./things/multi_servo` should have the following structure:
 ```
 ./things/multi_servo/
   circuit/
