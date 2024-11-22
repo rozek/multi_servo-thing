@@ -27,7 +27,7 @@ Below are instructions for installation and use of the "multi_servo" thing - ski
 #### Firmware Installation ####
 
 1. Create a new sketch and rename it to `multi_servo`
-2. Copy the firmware shown below into the sketch editor using the clipboard
+2. Copy the firmware shown below (or the contents of file [multi_servo/firmware-RP2040-Zero/multi_servo/multi_servo.ino](multi_servo/firmware-RP2040-Zero/multi_servo/multi_servo.ino) if you have a Waveshare RP2040-Zero board) into the sketch editor using the clipboard
 3. Connect the RP2040 board via USB and select it from the board dropdown in the Arduino IDE
 4. Compile and upload the sketch
 
