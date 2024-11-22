@@ -294,7 +294,7 @@ loop(async () => {
 
 ![Multi-Servo Tester](Multi-Servo-Test.png)
 
-This application lets the built-in LED blink blue, and the potentometer will control the position of the attached servo.
+This application lets the built-in LED blink blue, and the potentiometer will control the position of the attached servo.
 
 ## License ##
 
