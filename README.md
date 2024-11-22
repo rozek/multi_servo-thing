@@ -261,7 +261,7 @@ export default class multi_servo extends Thing {
     return:'0 to 1'
   },{
     name: 'setServo',
-    args: [ 'port: 0 to 7', 'angle: 0 to 180 (technically up to 255)' ]
+    args: [ 'port: 0 to 7', 'angle: 0 to 180' ]
   }]
 }
 ```
