@@ -4,7 +4,7 @@ a simple thing for the "[Modular-Things](https://github.com/modular-things/modul
 
 ![Multi-Servo Thing](Multi-Servo.jpg)
 
-> Nota bene: in contrast to the "things" provided by the "Modular Things" project itself, this one has been developed for a [Pimoroni Tiny2040](https://shop.pimoroni.com/products/tiny-2040) board (simply because I just had one on my desk). Since it uses the built-in RGB LEDs of that board, you may have to adjust the LED output commands in the Arduino "Firmware" shown below in order to make a thing for a different board.
+> Nota bene: in contrast to the "things" provided by the "Modular Things" project itself, this one has been developed for a [Pimoroni Tiny2040](https://shop.pimoroni.com/products/tiny-2040) board (which I had on my desk) and a [Waveshare RP2040-Zero](https://www.waveshare.com/wiki/RP2040-Zero) (which seems to be the cheapest of all small RP2040 boards). Since it uses the built-in RGB LEDs of that board, you may have to adjust the LED output commands in the Arduino "Firmware" shown below in order to make a thing for a different board.
 
 ## Wiring ##
 
@@ -41,7 +41,7 @@ Below are instructions for installation and use of the "multi_servo" thing - ski
 #### Software Installation ####
 
 1. Open the terminal window and navigate to the extracted directory
-2. copy the "multi_servo" directory from this repository and its contents into the `./things` folder. In the end, `./things/multi_servo` should have the following structure:
+2. copy the "multi_servo" directory from this repository and its contents into the `./things` folder. Delete the `firmware` folder for the wrong board and remove the board suffix from the name of the other (**you will not damage anything if you use the wrong firmware but the "thing" will simply not work**). In the end, `./things/multi_servo` should have the following structure:
 ```
 ./things/multi_servo/
   circuit/
@@ -112,9 +112,9 @@ loop(async () => {
 ```
 6. Click on "run (shift + enter)"<br>(the LED on the RP2040 board should blink now).
 
-## Firmware ##
+## Firmware (Board-specific) ##
 
-In the "Modular Things" terminology, the "firmware" of a thing is an Arduino sketch which implements a thing's functionality on the hardware side. Here is the one for the "multi_servo" thing:
+In the "Modular Things" terminology, the "firmware" of a thing is an Arduino sketch which implements a thing's functionality on the hardware side. Here is the one for a "multi_servo" thing based on a Tiny2040 (please, use the contents of file [multi_servo/firmware-RP2040-Zero/multi_servo/multi_servo.ino](multi_servo/firmware-RP2040-Zero/multi_servo/multi_servo.ino) for a Waveshare RP2040-Zero board instead):
 
 ```c++
 #include <osap.h>
