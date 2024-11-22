@@ -227,7 +227,7 @@ export default class multi_servo extends Thing {
   async getAnalog (Port:number):Promise<number> {
     Port = Math.floor(Port)
     if ((Port < 0) || (Port > 3)) throw new Error(
-      'multi-io thing: invalid analog input port ' + Port
+      'multi-servo thing: invalid analog input port ' + Port
     )
 
     const Data = await this.send('getAnalog',new Uint8Array([Port]))
@@ -242,7 +242,7 @@ export default class multi_servo extends Thing {
       'multi-servo thing: invalid servo port ' + Port
     )
 
-    Angle = Math.floor(Math.max(0,Math.min(Angle,255)))
+    Angle = Math.floor(Math.max(0,Math.min(Angle,180)))
     await this.send('setServo',new Uint8Array([Port,Angle]))
   }
 
