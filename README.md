@@ -165,7 +165,7 @@ In the "Modular Things" terminology, the "firmware" of a thing is an Arduino ske
     if (Length > 0) {
       int Port = Data[0];
       if ((Port >= 0) && (Port <= 7)) {
-        ServoList[Port].write(Length == 1 ? 0 : Data[1]);
+        ServoList[Port].write(Length == 1 ? 0 : (Data[1] > 180 ? 180 : Data[1]));
       }
     }
   }
