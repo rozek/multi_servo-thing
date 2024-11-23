@@ -34,7 +34,7 @@ export default class multi_servo extends Thing {
       'multi-servo thing: invalid servo port ' + Port
     )
 
-    Angle = Math.floor(Math.max(0,Math.min(Angle,255)))
+    Angle = Math.floor(Math.max(0,Math.min(Angle,180)))
     await this.send('setServo',new Uint8Array([Port,Angle]))
   }
 
@@ -53,6 +53,6 @@ export default class multi_servo extends Thing {
     return:'0 to 1'
   },{
     name: 'setServo',
-    args: [ 'port: 0 to 7', 'angle: 0 to 180 (technically up to 255)' ]
+    args: [ 'port: 0 to 7', 'angle: 0 to 180' ]
   }]
 }
